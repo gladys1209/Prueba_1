@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+BODY{
+	
+	}
+	
+img{
+	border-style:none;
+	}
+	
+#capa2{ 
+	/* Redondear las puntas*/
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	padding:2px; 
+	width: 900px; 
+	background-color: rgba(130,170,190,0.5);
+	/* sombreado de la imagen*/
+	-webkit-border-box-shadow: black 0.5em 0.5em 0.3em;
+	-moz-border-box-shadow: black 0.5em 0.5em 0.3em;
+	box-shadow: black 0.5em 0.5em 0.3em;
+	} 	
+
+#capa1{ 
+	/* Redondear las puntas*/
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	padding:1px; 
+	width: 26px; 
+	background-color: rgba(130,170,190,0.5);
+	/* sombreado de la imagen*/
+	-webkit-border-box-shadow: black 0.2em 0.2em 0.3em;
+	-moz-border-box-shadow: black 0.2em 0.2em 0.3em;
+	box-shadow: black 0.2em 0.2em 0.3em;
+	}
+	
+#capa3{ 
+	/* Redondear las puntas*/
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	padding:2px; 
+	width: 320px; 
+	/*background-color: rgba(130,170,190,0.5);*/
+	/* sombreado de la imagen*/
+	-webkit-border-box-shadow: black 0.5em 0.5em 0.3em;
+	-moz-border-box-shadow: black 0.5em 0.5em 0.3em;
+	box-shadow: black 0.5em 0.5em 0.3em;
+	} 	

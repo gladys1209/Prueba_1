@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+BODY{
+	/*background-image:url(../Imagenes/textura_4.jpg);
+	/*background-color:#C3E2F7;*/
+}
+
+div{
+	font-size:14px;
+	color:#00009D;
+	font-style:italic;
+	font-family:"Adobe Caslon Pro Bold";
+	}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Base de Datos</title>
+<link href="Hoja_Estilos.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_CheckFlashVersion(reqVerStr,msg){
+  with(navigator){
+    var isIE  = (appVersion.indexOf("MSIE") != -1 && userAgent.indexOf("Opera") == -1);
+    var isWin = (appVersion.toLowerCase().indexOf("win") != -1);
+    if (!isIE || !isWin){  
+      var flashVer = -1;
+      if (plugins && plugins.length > 0){
+        var desc = plugins["Shockwave Flash"] ? plugins["Shockwave Flash"].description : "";
+        desc = plugins["Shockwave Flash 2.0"] ? plugins["Shockwave Flash 2.0"].description : desc;
+        if (desc == "") flashVer = -1;
+        else{
+          var descArr = desc.split(" ");
+          var tempArrMajor = descArr[2].split(".");
+          var verMajor = tempArrMajor[0];
+          var tempArrMinor = (descArr[3] != "") ? descArr[3].split("r") : descArr[4].split("r");
+          var verMinor = (tempArrMinor[1] > 0) ? tempArrMinor[1] : 0;
+          flashVer =  parseFloat(verMajor + "." + verMinor);
+        }
+      }
+      // WebTV has Flash Player 4 or lower -- too low for video
+      else if (userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 4.0;
+
+      var verArr = reqVerStr.split(",");
+      var reqVer = parseFloat(verArr[0] + "." + verArr[2]);
+  
+      if (flashVer < reqVer){
+        if (confirm(msg))
+          window.location = "http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
+      }
+    }
+  } 
+}
+</script>
+</head>
+
+<body onLoad="MM_CheckFlashVersion('7,0,0,0','El contenido de la página requiere una nueva versión del reproductor Macromedia Flash.  Desea descargarlo ahora?');">
+<h1 align="center">BASE DE DATOS<a name="inicio"></a></h1>
+<table width="700" border="0">
+  <tr>
+    <td width="400"><h2>CONTENIDO</h2>
+      <ul>
+        <li><a href="Base_Datos.html#concepto">Base de Datos</a></li>
+        <li><a href="Base_Datos.html#componentes">Componentes de una Base de Datos</a></li>
+        <li><a href="Base_Datos.html#tipos">Tipos de Usuarios en Base de Datos</a></li>
+        <li><a href="Base_Datos.html#conceptos">Conceptos Básicos de Base de datos</a></li>
+        <li><a href="Base_Datos.html#niveles">Niveles de Abstracción en Base de datos</a></li>
+        <li><a href="Base_Datos.html#dbms">DBMS</a></li>
+        <li><a href="Base_Datos.html#integridad">Integridad de Datos</a></li>
+        <li><a href="Base_Datos.html#recuperación">Recuperación de Datos</a></li>
+        <li><a href="Base_Datos.html#mirror">Mirror o Espejo</a></li>
+        <li><a href="Base_Datos.html#seguridad">Seguridad de los Datos</a></li>
+        <li><a href="Base_Datos.html#control">Control y Administraciónde Recursos</a></li>
+        <li><a href="Base_Datos.html#ciclo">Ciclo de vida de las operaciones de Base de datos</a></li>
+        <li><a href="Base_Datos.html#diseño">Diseño de Base de datos</a></li>
+        <li><a href="Base_Datos.html#modelo">Modelo Entidad – Relaciòn</a></li>
+        <li><a href="Base_Datos.html#videos">Videos</a></li>
+    </ul></td>
+    <td width="300" align="center"><img src="imagenes/base_datos.jpg"></td>
+  </tr>
+</table>
+<br><br>
+
+<table width="700" border="0">
+  <tr>
+    <td width="600"><h3>Base de Datos<a name="concepto"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+<p align="justify">Se define una base de datos como una serie de datos organizados y relacionados entre sí, los cuales son recolectados y explotados por los sistemas de información de una empresa o negocio en particular.<br>
+
+Es un repositorio en donde guardamos información integrada que podemos almacenar y recuperar.<br>
+
+Una base de datos es un "almacén" que nos permite guardar grandes cantidades de información de forma organizada para que luego podamos encontrar y utilizar fácilmente. A continuación te presentamos una guía que te explicará el concepto y características de las bases de datos.s<br>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Componentes de una Base de Datos:<a name="componentes"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+<br>
+
+<table width="700" border="0">
+  <tr>
+    <td width="350"><h4>Hardware:</h4>
+<p align="justify">constituido por dispositivo de almacenamiento como discos, tambores, cintas, etc</p>.<br>
+<h4>Software:</h4>
+<p align="justify">que es el DBMS o Sistema Administrador de Base de Datos.</p><br>
+<h4>Datos:</h4>
+<p align="justify">los cuales están almacenados de acuerdo a la estructura externa y van a ser procesados para convertirse en información.
+</p></td>
+    <td width="350" align="center"><img src="imagenes/componentesbd.gif" width="181" height="286" alt="componentes"></td>
+  </tr>
+</table>
+<br>
+<table width="700" border="0">
+  <tr>
+    <td><h3>Tipos de Usuarios en Base de Datos<a name="tipos"></a></h3></td>
+   <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+<br>
+
+<ul>
+<li><b>Usuario Final:</b> <p>es la persona que utiliza los datos, esta persona ve datos convertidos en información:</p></li>
+<li><b>Desarrollador de Aplicaciones:</b> <p>es la persona que desarrolla los sistemas que interactuàn con la Base de Datos.</p></li>
+<li><b>DBA:</b><p> es la persona que asegura integridad, consistencia, redundancia, seguridad este es el Administrador de Base de Datos quien sed encarga de realizar el mantenimiento diario o periòdico de los datos.</p></li>
+</ul>
+
+<p>Las personas tienen acceso a DBMS se clasifican de la siguiente manera:<br><br>
+
+<b>USUARIOS INGENUOS. – </b>Son aquellos que interactuan con el sistema por medio de aplicaciones permanentes.<br><br>
+
+<b>USUARIOS SOFISTICADOS.- </b>son aquellos con la capacidad de acceder a la información por medios de lenguajes de consulta.<br><br>
+
+<b>PROGRAMADORES DE APLICACIÓN.-</b> son aquellos con un amplio dominio del DML capaces de generar nuevos módulos o utilerias capaces de manejar nuevos datos en el sistema.<br><br>
+
+<b>USUARIOS ESPECIALIZADOS.- </b>son aquellos que desarrollan módulos que no se refieren precisamente al manejo de los datos, si no a aplicaciones avanzadas como sistemas expertos, reconocimientos de imágenes, procesamiento de audio y demás.<br></p>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Conceptos Bàsicos de Base de datos<a name="conceptos"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+
+<p><b>Archivo:</b> son conjuntos de registros.<br>
+<b>Registros:</b> son conjuntos de campos.<br>
+<b>Campos:</b> es la minìma unidad de referencia.</p><br>
+
+<p align="center" id="imagen"><img src="imagenes/archivo.gif"></p>
+
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Niveles de Abstracción en Base de datos<a name="niveles"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+
+<p align="center" id="imagen"><img src="imagenes/abstraccion.gif"></p>
+
+<p><b>Externo:</b>esa es la visiòn del usuario final, se ve como se maneja los datos ya convertidos en información.<br><br>
+
+Es aquel en el que se presenta al usuario final y que puede combinaciones o relaciones entre los datos que conforman a la base de datos global. Puede definirse como la forma en el que el usuario aprecia la información y sus relaciones.<br><br>
+
+<b>Conceptual:</b>se ve como esta estructurado la Base Datos, equipos de campo tiene como estan estructurado los registros.<br><br>
+
+Es aquel en el que se definen las estructuras lógicas de almacenamiento y las relaciones que se darán entre ellas. Ejemplos comunes de este nivel son el diseño de los registros y las ligas que permitirán la conexión entre registros de un mismo archivo, de archivos distintos incluso, de ligas hacia archivos.<br><br>
+
+<b>Interno:</b> se ve como se almacena los datos fisicamente.<br><br>
+
+Es aquel en el que se determinan las características de almacenamiento en el medio secundario. Los diseñadores de este nivel poseen un amplio dominio de cuestiones técnicas y de manejo de hardware. Muchas veces se opta por mantener el nivel físico proporcionado por el sistema operativo para facilitar y agilizar el desarrollo.<br><br>
+<table width="700" border="0">
+  <tr>
+    <td><h3>DBMS<a name="dbms"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+<p>(Data Managment System (Sistema Administrador de Base de Datos) )<br></p>
+
+<p>Los Sistemas Gestores de Bases de Datos son un tipo de software muy específico, dedicado a servir de interfaz entre las bases de datos y las aplicaciones que la utilizan. Se compone de un lenguaje de definición de datos, de un lenguaje de manipulación de datos y de un lenguaje de consulta. En los textos que tratan este tema, o temas relacionados, se mencionan los términos SGBD y DBMS, siendo ambos equivalentes, y acrónimos, respectivamente, de Sistema Gestor de Bases de Datos y DataBase Management System, su expresión inglesa.</p>
+<p align="center" id="imagen"><img src="imagenes/subsistema.gif"></p>
+
+<p><b>Motor ò Núcleo DBMS:</b> recibe los requerimientos lògicos de E/S y los convierte en operaciones de lectura y escritura.<br>
+
+<b>Lògicos:</b>son cualquier tipo de consulta requerimiento de lectura con ingreso de datos (requerimiento de estructura) es ayudado por el Sistema Operativo para convertir estos requerimientos lògicos en fìsicos que actuàn sobre dispositivos de almacenamiento.<br>
+
+<b>Herramientas de definición:</b> permite definir y modificar la estructura de la Base de Datos, a este nivel definimos lo que se conoce como "Esquema " que es la definición total de Base de Datos, es que definimos la estructura de la tabla, los tipos de campos, las restricciones para los campos.</p><br>
+<ul>
+<li>Subesquema: manejo de vistas de datos, de niveles externos.</li>
+<li>Esquema: manejo de niveles conceptuales.</li>
+</ul>
+
+<p align="justify"><b>Interface de Procesamiento:</b> me provee de las facilidades de actualizaciòn, despliegue y visualizaciòn de datos.<br>
+
+<b>Desarrollo de Aplicaciones:</b> me permite generar una aplicación por Ej: generadores de formas, pantalla, còdigo, herramientas case, etc.<br>
+
+<b>Diccionario de Datos:</b> este es el componente al subsistema con el que interactuàn directamente el DBA, le proporciona niveles de consulta y reportes útiles para su trabajo de administración. Es la descripción de la estructura de Base de Datos y relaciones entre datos, y programas.</p>
+
+<h3>DBMS</h3>
+
+<h4>Caracterìsticas y Objetos:</h4>
+<ul>
+<li>Independencia de Datos: el DBMS me provee una independencia de mis datos vs. las aplicaciones.</li>
+<li>Cambio en datos no implica cambio en programas y viceversa (Menor coste de mantenimiento).</li>
+<p align="center" id="imagen"><img src="imagenes/data.gif"></p>
+<li>Minimizar Redundancia (Datos repetidos): desperdicio de Espacio de Almacenamiento.</li>
+<p align="center" id="imagen"><img src="imagenes/datos.gif"></p>
+Independencia de datos es proteger nuestro programa de aplicaciones frente a las modificaciones en la estructura de datos y viceversa, ya sea en forma física ò lógica.
+<li>Independencia Física: es protección a los programas de aplicación debido a cambios en la estructura de archivos, con cambios en las características de los campos. Ej: cambio de clave primaria a secundaria.</li>
+<li>Independencia Lógica: protección a los programas de aplicación cuando se modifica el esquema.</li>
+Redundancia, datos repetidos y distribuidos en cualquier parte. El efecto que ocasiona la redundancia es tener inconsistencia de datos y desperdicio de espacio de almacenamiento.<br>
+ Esta se presenta cuando se repiten innecesariamente datos en los archivos que conforman la base de datos.
+ <li>Inconsistencia de Datos: dato que esta en lugar con un valor y encuentra en otro lugar con otro valor. Ej: se actualiza el archivo cliente pero no se actualiza el archivo de transacciones.</li>
+ Ocurre cuando existe información contradictoria o incongruente en la base de datos.
+</ul>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Integridad de Datos<a name="integridad"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+<p><b>Integridad:</b> conjunto de seguridades que son utilizadas para mantener los datos correctos.
+
+  Ocurre cuando no existe a través de todo el sistema procedimientos uniformes de validación para los datos.<br>
+
+<b>Fuente de Error: </b>estas fuentes de error se origina si el programa de entrada de datos no esta validado. Ej: fallas de hardware, actualizaciones incompletas, defectos del software, inserción de datos no vàlidos, errores humanos.
+
+ Una tècnica que usa el BDMS de una entrada de datos no vàlida es la validación.<br>
+
+<b>Validación:</b> es proteger los datos, validar los datos en la entrada de datos. Existen tipos de validaciones:</p><br>
+<ul>
+<li><b>Tipo de Dato:</b> en si se define un campo como carácter ò char y no puede ingresar nùmeros enteros.</li>
+<li><b>Valor de Dato:</b> si se define un valor entero se puede especificar un rango y no se puede pasar de ese valor.</li>
+<li><b>Valores Claves / No Nulos: </b>asegura registros ùnicos y cuyos valores no sean nulos.</li>
+<li><b>Integridad Referencial:</b> asegua al DBMS que no exista registros hijos sin sus registros padres correspondientes.</li>
+</ul>
+
+<h4>Control de Concurrencia ò Simultaniedad</h4>
+
+<p>Se da en ambiente multi-usuario, tratando de acceder aun objeto de datos al mismo tiempo.<br>
+
+Ocurre cuando el sistema es multiusuario y no se establecen los controles adecuados para sincronizar los procesos que afectan a la base de datos. Comúnmente se refiere a la poca o nula efectividad de los procedimientos de bloqueo<br>
+
+Granularidad: que es el tamaño de las unidades aseguradas. Ej: la granularidad puede proteger un campo, un registro, un archivo,etc.</p>
+
+<p align="center" id="imagen"><img src="imagenes/tabla.gif"></p>
+<p>Dead-look(bloqueo): es la tècnica que evita errores de concurrencia, se da cuando se desarrolla una espera circular entre dos transacciones y cada una de estas solicita una actualizaciòn sobre el mismo archivo, no permite a otros usuarios el recurso hasta que tèrmine el proceso, se da la espera circular.
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Recuperaciòn de Datos<a name="recuperación"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+
+
+<p>Recuperar los datos frente a las fuentes de error mencionadas anteriormente. La restauración de la Base de Datos a su estado normal es responsabilidad del DBA, quien esl el responsable de implantar procedimientos de detecciòn de error y recuperaciòn.<br>
+
+El DBA es quien tiene el control centralizado de la base de datos. Se persigue con esto reducir el número de personas que tengan acceso a los detalles técnicos y de diseño para la operación del DBMS.</p>
+
+<p>Las soluciones principales de un DBA son:<br><br>
+
+<b>DEFINICION DEL ESQUEMA.- </b>Crea el esquema original de la base de datos y genera el diccionario de datos por medio de proposiciones en DDL.<br>
+
+<b>DEFINICION DE ESTRUCTURAS DE ALMACENAMIENTO Y METODOS DE ACCESO.-</b> Se encarga de generar a seleccionar estructuras para el medio secundario y definir los métodos de acceso a la información, esto ultimo por medio de proposiciones en DML.<br>
+
+<b>MODIFICACION DE ESQUEMA Y ORGANIZACIÓN.- </b>Es una actividad poco frecuente que consiste en rediseñar el esquema de la base de datos. Esto se haría necesario ante la modificación abrupta de las condiciones originales que dieron pie al diseño del esquema primario. Las proposiciones para llevar a cabo esta tarea se realizan en DDL.<br>
+
+<b>CONCESION DE AUTORIZACIONES DE ACCESO.- </b>Se encarga de registrar a los usuarios para permitir su acceso al DBMS. Asigna a cada uno de ellos una serie de atributos que le permiten gozar de privilegios como el acceso a determinadas áreas de aplicación, de los datos o del uso de recursos en el sistema.<br>
+
+<b>ESPECIFICACION DE LAS LIMITANTES DE INTEGRIDAD.- </b>Crea una serie de tablas donde se especifica el conjunto de restricciones que serán aplicables durante los procesos de actualización</p>
+<b>Para recuperar:</b><br>
+
+<p>Backup(respaldo): disco duro,cinta.</p>
+<ul>
+<li>Backup caliente: Base de Datos esta operativa.</li>
+<li>Backup frio: Base de Datos no esta operativa.</li>
+</ul>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Mirror o Espejo<a name="mirror"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+<p align="center" id="imagen"><img src="imagenes/mirror.gif"></p>
+<p><b>Archivos de Logs: </b>(registro de transacciòn)<br>
+
+Son las transacciones diarias que se registran en la Base de Datos. Cuando ocurre un problema se acude a los archivos de logs se hace un REVERSO y tambièn se puede recuperar la ùltima transacción que se hizo.</p><br>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Seguridad de los Datos<a name="seguridad"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+<br>
+
+
+<p>Se presentan cuando no es posible establecer claves de acceso y resguardo en forma uniforme para todo el sistema, facilitando así el acceso a intrusos.<br>
+
+La seguridad de los datos se puede definir en las siguientes aspectos:<br>
+<ul>
+<li><b>Objeto a asegurar:</b> el primer objeto a asegurar son los objetos, programas y finalmente al esquema.</li>
+<li><b>Codificaciòn de Claves:</b> el DBMS provee la seguridad de los Login (usuario y password).</li>
+<li><b>Control de Acceso:</b> se especifica seguridades contra accesos indicados orientado a personas no autorizada.</li>
+</ul>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Control y Administraciònde Recursos <a name="control"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+
+<p>El DBMS debe proveer al DBA de todos los mecanismos para control y administración de recursos. Para que el DBA con integridad de datos, recuperaciòn de errores e implementaciòn de seguridad.<br><br>
+  
+<b>Establecimiento de Relaciones entre Datos</b>
+  
+<p>El BDMS debe proveer los recursos para el establecimiento de relaciones entre los datos, cuales son las relaciones: 1 -> 1, 1 -> n, n -> n</p>
+
+<table width="700" border="0">
+  <tr>
+    <td><h3>Ciclo de vida de las operaciones de Base de datos<a name="ciclo"></a></h3></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+<br>
+
+  
+  <p>Etapas:</p>
+  <ul>
+  <li>Planificación del Proyecto</li>
+  <li>Definición del Sistema</li>
+  <li>Recolección y Análisis de los Requisitos</li>
+  <li>Diseño de la Base de Datos</li>
+  <li>Selección del SGDB / DBMS</li>
+  <li>Diseño de la Aplicación</li>
+  <li>Prototipo</li>
+  <li>Implementaciòn</li>
+  <li>Conversión y Carga de datos</li>
+  <li>Prueba</li>
+  <li>Mantenimiento</li>
+  </ul>
+  
+<p>Estas etapas no son estrictamente secuenciales de hecho hay que repetir algunas de las etapas varias veces haciendo lo que se conoce como "Ciclos de Re-alimentaciòn" por Ej: los problemas que se encuentran en la etapa de Diseño de la Base de Datos pueden requerir una recolección de requisitos adicional y su posterior análisis.</p>
+  
+<p>El ciclo de vida de un desarrollo de una base de datos consta de siete pasos:</p>
+  <ol>
+  <li>Análisis de las necesidades</li>
+  <li>Estudio de viabilidad</li>
+  <li>Definición de requisitos</li>
+  <li>Diseño conceptual / lógico</li>
+  <li>Implementación</li>
+  <li>Evaluación y Mantenimiento</li>
+  <li>Planificación del Proyecto:</li>
+  </ol>
+  
+<p>Esta etapa con lleva la planificación de como se puede llevar acabo las etapas de ciclo de vida de la manera màs eficiente, hay tres componentes principales:</p>
+  <ol type="a">
+  <li>El trabajo que se va arealizar.</li>
+  <li>Los recurso para llevarlo acabo.</li>
+  <li>El dinero para pagar todo ello.</li>
+  </ol>
+ 
+<h4>Definición del Sistema</h4>
+  
+<p>En esta etapa se especifica el àmbito y los ìndices de la aplicación de la Base de Datos asì como con que otros sistemas interactua. Tambièn hay que determinar quienes son los usuarios y las àreas de la aplicación.</p>
+  
+<h4> Recolección y Análisis de los Requisitos:</h4>
+  
+<p>En esta etapa se recoge y analiza los requerimientos de los usuarios y de las àreas de aplicación. Esta información se la puede recoger de varias formas:</p>  
+<ul>
+  <li>Entrevistando el personal de la empresa concretamente aquellos que son considerando expertos en la àrea que se de.</li>
+  <li>Observando el funcionamiento de la empresa.</li>
+  <li>Examinando documentos sobre todo aquellos que se utilizan para recoger o visualizar la información.</li>
+  <li>Utilizando cuestionario para recoger información de grandes grupos de usuarios.</li>
+  <li>Utilizan la experiencia adquirida en el Diseño de Sistemas similares.</li>
+</ul>
+  
+<p>Esta etapa tiene como resultado en conjunto de documentos con las especificaciones de requisitos de los usuarios en donde se describen las operaciones que se realizan en la empresa desde distintos puntos de vista.<br>
+  
+  Los requisitos de desarrollo involucran el software y hardware necesario para la implementación, los recursos humanos necesarios (tanto internos como externos), la formación al personal.</p>
+ 
+<table width="700" border="0">
+  <tr>
+    <td><h3>Diseño de Base de datos:<a name="diseño"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+  
+<p>En esta etapa se crea un esquema conceptual de la base de datos. Se desarrollan las especificaciones hasta el punto en que puede comenzar la implementación. Durante esta etapa se crean modelos detallados de las vistas de usuario y sobre todo las relaciones entre cada elemento del sistema, documentando los derechos de uso y manipulación de los diferentes grupos de usuarios.<br>
+  
+  Si parte de la información necesaria para crear algún elemento establecido ya se encuentra implementado en otro sistema de almacenamiento hay que documentar que relación existirá entre uno y otro y detallar los sistemas que eviten la duplicidad o incoherencia de los datos.<br>
+  
+  El diseño consta, como se vio anteriormente, de tres fases: el diseño global o conceptual, el diseño lógico y el modelo físico.<br>
+  
+  Esta etapa consta de tres fases: diseño conceptual, diseño lògico, diseño fisico de la Base de Datos.<br>
+  
+  La primera fase consiste en la producción de un esquema conceptual que es independiente de todos los consideraciones fisicas.este modelo se refina después en un esquema lògico eliminando las construcciones que no se puede representar en el modelo de Base de Datos escogido (relacional, orientado a objeto,etc). En la tercera fase el esquema lògico que traduce un esquema fisico para el sistema gestor de Base de Datos escogido. La fase de diseño fisico considera las estructuras de almacenamiento y los mètodos de acceso necesarios para proporcionar un acceso eficiente a la Base de Datos en memoria secundaria.</p>
+  
+<h4>Selección del SGBD / DBMS:</h4>
+  
+<p>Si no se dispone de un Sistema Gestor de Base de Datos o que se encuentre obsoleto se debe escoger un SGBD que sea adecuado para el sistema de información esta elecciòn se debe hacer en cualquier momento antes del diseño lògico.</p>
+  
+<h4>Diseño de aplicación:</h4>
+  
+<p>En esta etapa de diseña los programas de aplicación que usaràn y aplicarà la Base de Datos, esta etapa el diseño de la Base de Datos son paralelos en la mayor parte de los casos no se puede finalizar el diseño de las aplicaciones hasta que se a terminado el diseño de Base de Datos. Por otra lado la Base de Datos exige para dar soporte a las aplicaciones por lo que ahora una retroalimentación desde el diseño de las aplicaciones al diseño de la Base de Datos. En esta etapa hay que asegurarse de que toda la funcionalidad especificada en los requisitos de usuarios se encuentra en el diseño de la aplicación.</p>
+  
+<h4>Prototipo:</h4>
+  
+<p>Esta etapa es opcional es para construir prototipo de la aplicaiòn que permiten a los diseñadores y al usuario probar el sistema, un prototipo es un modelo de trabajo de las aplicaciones del sistema. El prototipo no tiene toda la funcionalidad del sistema final pero es suficiente para que los usuarios puedan usar el sistema e identificar que aspectos estan bien, cuales no son adecuados ademàs de poder sugerir mejora ò la inclusión de nuevos elementos.</p>
+  
+<h4>Implementaciòn:</h4>
+  
+<p>En esta etapa se crean las definiciones de la Base de Datos a nivel conceptual externo ò interno, asì como los programas de aplicación la implementaciòn de la Base de Datos se realiza mediante las sentencias SQL, estas sentencias se encargan de crear el sistema d la base, los ficheros donde se almacenaràn los datos y las vistas de los usuarios.<br>
+  
+  Los programas de aplicación se implementan utilizando lenguaje de tercera y cuarta generaciòn, partes de estas aplicaciones son transacciones de la Base de Datos que se implementan tambièn mediante lenguaje SQL. La sentencia de este lenguaje se pueden embeber en un lenguaje de programciòn anfitrion como Visual Basic,Java, etc. Tambièn se implementan en esta etapa todos l,os controles de seguridad e integridad.<br>
+  
+  Una vez totalmente detallado el modelo conceptual se comienza con la implementación física del modelo de datos, a medida que se va avanzando en el modelo el administrador del sistema va asegurando la corrección del modelo y el validador la utilidad del mismo.<br></p>
+  
+<h4>Conversión y Carga de datos:</h4>
+  
+<p>Esta etapa es necesaria cuando se esta reemplazando un sistema antiguo por uno nuevo. Los datos se cargan desde el sistema viejo al nuevo directamente ò si es necesario se convierte al formato que requiera el nuevo SGBD y luego se carga esta etapa se la suele llamar "Migraciòn".</p>
+  
+<h4>Prueba:</h4>
+  
+<p>En esta etapa se prueba y vàlida el sistema con los requisitos especificados por los usuarios. Para ello se debe diseñar una materia de test con datos reales que se deben llevar acabo de manera metòdica y rigurosa. Si la fase de prueba se lleva correctamente descubrirà los errores en los programas de aplicación y en la estructura de la Base de Datos.  </p>
+
+<h4>Mantenimiento:</h4>
+  
+<p>Una vez que el sistema esta completamente probado o implementado se pone en marcha. El sistema esta ahora en la fase de mantenimiento en la que se lleva acabo los siguientes tareas: monitoreo de las prestaciones del sistema y mantenimiento, y actualizaciòn del sistema.<br>
+  
+  En esta última etapa todos los usuarios del sistema acceden a la base de datos y deben asegurarse el correcto funcionamiento de la misma, que sus derechos son los adecuados, teniendo a su disposición cuanta información necesiten. También deberán asegurarse que el acceso a los datos es cómodo, práctico, seguro y que se han eliminado, en la medida de lo posible, las posibilidades de error.<br>
+  
+  El administrador se asegura que todos los derechos y todas las restricciones han sido implementadas correctamente y que se ha seguido en manual de estilo en la totalidad de la implementación</p>
+
+ 
+<table width="700" border="0">
+  <tr>
+    <td><h3>Modelo Entidad – Relaciòn <a name="modelo"></a></h3></td>
+    <td width="90" align="center"><a href="Base_Datos.html#inicio"><h4 class="menu">Inicio</h4></td>
+  </tr>
+</table>
+
+<ul>
+<li><b>Modelaje:</b><p> es el proceso mediante el cual podemos identificar las propiedades dinàmicas ò estàticas de un dominio de aplicación con mira a su transformación en un diseño interpretable en un sistema computarizado. Es el plasmar los requerimientos de los usuarios en un programa para poder implementarlo.</p></li>
+<li><b>Entidad: </b><p>es el objeto sobre el cual se requiere mantener ò almacenar información.</p></li>
+<li><b>Relaciòn:</b> <p>es la asociación significativa y estable entre dos entidades</p></li>
+<p align="center" id="imagen"><img src="imagenes/facturas.gif"></p>
+<li><b>Atributo:</b> <p>son las propiedades que describen y califican una entidad. Ej: Entidad cliente(nombre, apelliido, direcciòn, edad, sexo)<br>
+
+Las entidades se las representa mediante cajas que se colocan el nombre de la entidad con letras mayùsculas. Ej:</p></li>
+<p align="center" id="imagen"><img src="imagenes/factura.gif"></p>
+<p>Las relaciones se representan con lìneas que conectan las cajas de las entidades. Ej: </p>
+<p align="center" id="imagen"><img src="imagenes/pedidos.gif"></p>
+<p>Los atributos se incluyen dentro de las cajas de las entidades y se escriben con minùsculas. Ej:</p>
+</ul>
+<p align="center" id="imagen"><img src="imagenes/cliente.gif"></p>
+<p><b>Entidades:</b> se puede considerar entidades a los sujetos, objetos, a los eventos, a los lugares y a los abstracciones.</p>
+<p align="center" id="imagen"><img src="imagenes/entidades.gif"></p>
+<p><b>Relaciones: </b>las relaciones tiene tres propiedades ò caracterìsticas:</p>
+<ul>
+<li><p>Grado ò Cardinalidad: que se clasifica en:</p></li>
+<p align="center" id="imagen"><img src="imagenes/relaciones.gif"></p>
+
+<li><p>Opcionalidad:es la participación obligatoria u opcional en la entidad de la relaciòn.</p></li>
+<p align="center" id="imagen"><img src="imagenes/opcional.gif"></p>
+
+<li><p>Leyenda: es una expresión que escribe el rol de cada entidad en la relaciòn.</p></li>
+<p align="center" id="imagen"><img src="imagenes/leyenda.gif"></p>
+</ul>
+
+<h4>Como se lee el Grado ò Cardinalidad:</h4>
+<ul>
+<li><p><b>Uno a muchos:</b> una instancia de la entidad A se relaciona con una ò màs instancias de la entidad B.</p></li>
+<p align="center" id="imagen"><img src="imagenes/unomuchos.gif"></p>
+<li><p><b>Muchos a muchos:</b> una instancia de la entidad A se relaciona con una ò màs instancias de la entidad B y una instancia de la entidad B se relaciona con uno ò màs instancias de le entidad B.</p></li>
+<p align="center" id="imagen"><img src="imagenes/muchosmuchos.gif"></p>
+
+  <li><p><b>Uno a uno:</b> una instancia de la entidad A se relaciona con uno y sòlo unainstancia de la entidad B.</p></li>
+
+<p align="center" id="imagen"><img src="imagenes/unouno.gif"></p>
+</ul>
+<h4>Relaciòn Recursiva</h4>
+
+<p>Una instancia de una entidad se asocia con instancia de si misma, es opcional en los dos extremos,es decir, no hay el carácter de obligatorio. Ej:</p>
+
+<p align="center" id="imagen"><img src="imagenes/relacion.gif"></p>
+
+<h4>Atributo:</h4>
+
+<p>Los atributos son empleados para identificar, describir, calificar ò expresar el estado de una entidad.<br>
+
+Todo entidad posee un atributo ò combinación de atributos que se denomina "clave primaria" y que emplea para diferenciar cada instancia de los demàs.<br>
+
+Adicionalmente los atributos pueden ser obligatoriou opcionales.</p>
+<ul>
+<li>A los atributos que forman parte de la clave primaria se los identifica anteponiendoles el signo de numero (#).</li>
+<li>A los atributos obligatoriose les antepone el asterisco (*).</li>
+<li>A los atributos opcionales se les antepone un circulo (o).</li>
+</ul>
+<h4>Ejemplo:</h4>
+ <p align="center" id="imagen"><img src="imagenes/ejemplo.gif"></p>
+
+<p>En un diagrama entidad-relaciòn tambièn puede agrupar las entidades en supertipo y en subtipo.</p>
+<ul>
+<li>Los supertipo agrupa a dos ò màs entidades subtipo.</li>
+<li>Los subtipo heredan los atributos de las entidades supertipo.</li>
+
+<p align="center" id="imagen"><img src="imagenes/ejemplo1.gif"></p>
+
+<li>Cada subtipo puede tener relaciones propias independientes del supertipo.</li>
+<li>Los subtipos se representan como cajas dibujadas dentro de la caja del supertipo.</li>
+<p align="center" id="imagen"><img src="imagenes/ejemplo2.gif"></p>
+</ul>
+  
+<h3>VIDEOS</h3>
+
+
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="320" height="240" id="FLVPlayer">
+  <param name="movie" value="FLVPlayer_Progressive.swf" />
+  <param name="salign" value="lt" />
+  <param name="quality" value="high" />
+  <param name="scale" value="noscale" />
+  <param name="FlashVars" value="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=video/Dise%C3%B1oBD&autoPlay=false&autoRewind=false" />
+  <embed src="FLVPlayer_Progressive.swf" flashvars="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=video/Dise%C3%B1oBD&autoPlay=false&autoRewind=false" quality="high" scale="noscale" width="320" height="240" name="FLVPlayer" salign="LT" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</body>
+</html>

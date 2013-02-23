@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Programación I</title>
+<link href="Hoja_Estilos.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.Estilo1 {
+	font-size: 36px;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center">PROGRAMACIÓN I<a name="inicio"></a></h1>
+<H2>CONTENIDO  </H2>
+<table width="650" border="0">
+  <tr>
+    <td width="382"><ul>
+      <li><a href="Programacion.html#algoritmos">Algoritmos</a></li>
+      <li><a href="Programacion.html#caracteristicas">Caracteristicas de los algoritmos</a></li>
+      <li><a href="Programacion.html#medios">Medios de expresión de un algoritmo</a></li>
+      <li><a href="Programacion.html#pseudocodigo">Pseudocódigo </a></li>
+      <li><a href="Programacion.html#diagrama">Diagrama  de flujo</a></li>
+      <li><a href="Programacion.html#estructuras">Estructuras de control</a></li>
+      <li><a href="Programacion.html#estructuras1">Estructuras secuenciales</a></li>
+      <li><a href="Programacion.html#estructuras2">Estructuras selectivas</a></li>
+      <li><a href="Programacion.html#estructuras3">Estructuras repetitivas</a></li>
+    </ul>    </td>
+    <td width="258" align="center"><img src="imagenes/diagramaflujo.jpg"></td>
+  </tr>
+</table><br>
+<table width="650" border="0">
+  <tr>
+    <td width="500"><H3>ALGORITMOS<a name="algoritmos"></a></H3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+
+<p align="justify">En matemáticas, ciencias de la computación, y disciplinas relacionadas,  un <strong>algoritmo</strong> (del latín, <em>dixit algorithmus</em> y éste a su vez del  matemático persa al-Jwarizmi) es una lista bien   definida, ordenada y finita de  operaciones que permite hallar la   solución a un problema. Dado un estado  inicial y una entrada, a través   de pasos sucesivos y bien definidos se llega a  un estado final,   obteniendo una solución. </p>
+<p align="justify"> En la vida cotidiana se   emplean algoritmos en multitud de ocasiones para  resolver diversos   problemas. Algunos ejemplos se encuentran en los instructivos  (manuales   de usuario), los cuales muestran algoritmos para usar el aparato en    cuestión o inclusive en las instrucciones que recibe un trabajador por   parte de  su patrón. También existen ejemplos de índole matemático, como   el algoritmo de  la división para calcular el cociente de dos números,   el algoritmo de Euclides  para calcular el máximo común divisor de dos   enteros positivos, o el método de  Gauss para resolver un Sistema lineal   de ecuaciones. </p>
+<p align="justify"> Cuando escribimos un   programa de computadora, generalmente estamos  llevando a cabo un método   que se ha inventado para resolver algún problema  previamente. Este   método es a menudo independiente de la computadora y es  probable que   sea igualmente apropiado para muchas tipos de computadora y muchos    lenguajes de computadora. Es el método, en el programa de computación,   el que  nosotros debemos estudiar para aprender cómo se está tratando de   resolver el  problema. El término algoritmo se usa en la informática   para describir un  método problema-solución conveniente para la   aplicación en un programa de  computadora. </p>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Características de los algoritmos <a name="caracteristicas"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+<p align="justify">El científico de computación   Donald Knuth ofreció una lista de cinco propiedades, que son    ampliamente aceptadas como requisitos para un algoritmo: </p>
+<table width="600" border="1">
+  <tr>
+    <td width="118"><b>Carácter finito.</b></td>
+    <td width="466"><em><p>"Un algoritmo siempre debe       terminar después de un número finito de pasos".</p></em></dd>
+    </dl></td>
+  </tr>
+  <tr>
+    <td><b>Precisión</b>.</td>
+    <td><em><p>"Cada paso de un algoritmo debe       estar precisamente definido;   las operaciones a llevar a cabo deben ser       especificadas de manera   rigurosa y no ambigua para cada caso".</p></em> </td>
+  </tr>
+  <tr>
+    <td><b>Entrada</b>.</td>
+    <td><em><p>"Un algoritmo tiene cero o más       entradas: cantidades que le son   dadas antes de que el algoritmo comience,       o dinámicamente   mientras el algoritmo corre. Estas entradas son tomadas de         conjuntos específicos de objetos".</p></em></td>
+  </tr>
+  <tr>
+    <td><b>Salida</b>.</td>
+    <td><em><p>"Un algoritmo tiene una o más salidas:       cantidades que tienen una relación específica con las entradas".</p></em> </td>
+  </tr>
+  <tr>
+    <td><b>Eficacia</b>. </td>
+    <td><em><p>"También se espera que un algoritmo       sea eficaz, en el   sentido de que todas las operaciones a realizar en un       algoritmo   deben ser suficientemente básicas como para que en principio         puedan ser hechas de manera exacta y en un tiempo finito por un hombre         usando lápiz y papel".</p></em> </td>
+  </tr>
+</table>
+<p align="justify">A partir del carácter finito y de  la   salida se deduce que ante una misma situación inicial (o valores de   entrada)  un algoritmo debe proporcionar siempre el mismo resultado (o   salida), con  excepción de los algoritmos  probabilistas.</p>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Medios de expresión de un algoritmo<a name="medios"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+
+<p align="justify">Los algoritmos pueden ser    expresados de muchas maneras, incluyendo al  lenguaje  natural,   pseudocódigo, diagramas  de flujo y lenguajes de programación entre   otros. Las descripciones en  lenguaje natural tienden a ser ambiguas y   extensas. El usar pseudocódigo y  diagramas de flujo evita muchas   ambigüedades del lenguaje natural. Dichas  expresiones son formas más   estructuradas para representar algoritmos; no  obstante, se mantienen   independientes de un lenguaje de programación  específico.</p>
+<p align="justify"> La descripción de un algoritmo  usualmente se hace en tres niveles:</p>
+<p align="justify"><b>Descripción de alto nivel</b>.</p>
+<p align="justify">Se establece el problema, se         selecciona un modelo matemático y se explica el algoritmo de manera         verbal, posiblemente con ilustraciones y omitiendo detalles. </p>
+<p align="justify"><b>Descripción formal</b>.</p>
+<p align="justify">Se usa pseudocódigo para describir       la secuencia de pasos que encuentran la solución.</p>
+<p align="justify"><b>Implementación</b>.</p>
+<p align="justify">Se muestra el algoritmo expresado         en un lenguaje de programación específico o algún objeto capaz de   llevar a       cabo instrucciones</p>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Pseudocódigo <a name="pseudocodigo"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+<p align="justify">Pseudocódigo es la descripción de   un algoritmo que asemeja a un lenguaje  de programación pero con   algunas convenciones del lenguaje natural. Pseudo o  seudo, significa   &ldquo;falso&rdquo;, &ldquo;imitación&rdquo; y Código se refiere a las instrucciones  escritas   en el lenguaje de programación; <em>Pseudocódigo  no es realmente un código sino una imitación y una versión abreviada de  instrucciones reales para la computadora.</em></p>
+<p align="justify"> Los Pseudocódigos  utilizan palabras clave como: </p>
+<p align="justify"><strong>DO </strong>(hacer), <strong>IF –  THEN – ELSE</strong> (si – entonces – sino) <strong>ENDIF</strong> (fin de si), <strong>DO </strong>UNTIL (hacer hasta)  etc. </p>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Diagrama de flujo <a name="diagrama"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+<p align="justify">Los diagramas de flujo son    descripciones gráficas de algoritmos; usan símbolos conectados con   flechas para  indicar la secuencia de instrucciones y están regidos por   ISO  (International Standard Organization) y ANSI (American National   Standards  Institute) </p>
+<p align="justify">Los diagramas de flujo son   usados  para representar algoritmos pequeños, ya que abarcan mucho   espacio y su  construcción es laboriosa. Por su facilidad de lectura son   usados como  introducción a los algoritmos, descripción de un lenguaje y   descripción de  procesos a personas ajenas a la computación. Un   diagrama de flujo debe ilustrar gráficamente los pasos o procesos a   seguir para alcanzar la solución de un problema.</p>
+<p align="justify"> Etapas en la construcción de un  diagrama de flujo.</p>
+<table width="600" border="0">
+  <tr>
+    <td><img src="imagenes/flujograma1.jpg"></td>
+    <td><ol>
+      <li> <p>Todo diagrama de flujo debe tener un Inicio  y un Fin.</li>
+      <li><p> Las líneas utilizadas para indicar la  dirección del flujo del diagrama deben ser <b>Rectas,  Verticales y Horizontales</b>. NO pueden ser inclinadas  o cruzadas.</p></li>
+      <li><p> Todas las líneas que indiquen la dirección del flujo deberán   estar conectadas por medio de un símbolo que exprese lectura, proceso,   decisión, impresión o fin.</p></li>
+     <li><p> La notación utilizada en el diagrama de  flujo debe ser independiente del lenguaje de programación.</p></li>
+     <li> <p>El diagrama de flujo debe ser construido de arriba hacia abajo y de izquierda a derecha</p></li>
+     <li><p> Si el diagrama requiere más de una hoja,  debemos utilizar los   conectores adecuados y enumerar las páginas  convenientemente.</p></li>
+     <li><p> No puede llegar más de una línea a un símbolo.</li>
+  </ol></p></td>
+  </tr>
+</table>
+<p align="justify"><b>Ejemplo.</b></p>
+<p align="justify">Diseñar un  algoritmo   correspondiente que dado como dato la calificación de un alumno en un    examen escriba &ldquo;Aprobado&rdquo; si su calificación es mayor que 8 y   &ldquo;Reprobado&rdquo; en  caso contrario.</p>
+<p align="justify"><b> Solución: </b></p>
+<p align="justify">Dato:  CAL  donde CAL es una variable de tipo  real que expresa la calificación del alumno. </p>
+<table width="600" border="0">
+  <tr>
+    <td width="314"><img src="imagenes/flujograma2.jpg"></td>
+    <td width="270"><p align="justify"> 1. Leer CAL</p>
+<p align="justify">2. Si CAL &gt; 8</p>
+      <p align="justify"> ENTONCES escribir "Aprobado"</p>
+      <p align="justify">SINO Escribir "Reprobado"</p>
+    <p align="justify">3. FIN SI</p></td>
+  </tr>
+</table><br>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">ESTRUCTURAS DE CONTROL.<a name="estructuras"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+<p align="justify">Las estructuras lógicas básicas necesarias para confeccionar un programa se reduce en tres: <strong>SECUENCIALES, SELECTIVAS Y REPETITIVAS</strong></p>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Estructuras secuenciales<a name="estructuras1"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+
+<p align="justify"><b>Estructura DO - END ( INICIO - FIN)</b></p>
+<table width="600" border="0">
+  <tr>
+    <td width="174"><img src="imagenes/flujograma3.jpg">;</td>
+    <td width="410"><p align="justify">DO</p>
+      <p align="justify">acción A</p>
+      <p align="justify">acción B</p>
+      <p align="justify"> acción C</p>
+    <p align="justify">END</p></td>
+  </tr>
+</table><br>
+<table width="650" border="0">
+  <tr>
+    <td><h3 align="justify">Estructuras selectivas.<a name="estructuras2"></a></h3></td>
+    <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+  </tr>
+</table>
+
+<p align="justify">Las estructuras algorítmicas   selectivas que se utilizan para la toma de decisiones lógicas las   podemos clasificar de la siguiente manera:</p>
+<p align="justify"><b>SI ENTONCES</b> que es una estructura selectiva simple.</p>
+<p align="justify"><b>SI ENTONCES / SINO </b>que es una estructura selectiva doble</p>
+<p align="justify"><b>SI MÚLTIPLE </b>que es una estructura selectiva múltiple.</p>
+<table width="600" border="0">
+  <tr>
+    <td width="291"><img src="imagenes/flujograma4.jpg"></td>
+    <td width="293"><p>Aquí podemos observar una estructura SI ENTONCES/SINO la cual permite   que el flujo del diagrama se bifurque por dos ramas diferentes en el   punto de la toma de decisiones.</p></td>
+  </tr>
+</table>
+<p align="justify">En lenguaje algorítmico se expresa así:</p>
+<blockquote>
+  <p align="justify">SI condición (verdadera)<br>
+    entonces <br>
+    Hacer operación 1 <br>
+    sino<br>
+    Hacer operación 2<br>
+    Fin de la condicional </p>
+  <p align="justify"> A continuación se muestran las otras estructuras selectivas </p>
+</blockquote>
+<table width="200" border="0" cellpadding="7">
+  <tr>
+    <td><img src="imagenes/flujograma5.jpg"></td>
+    <td><img src="imagenes/flujograma6.jpg"></td>
+  </tr>
+</table><br>
+<blockquote>
+  <table width="650" border="0">
+    <tr>
+      <td><h3 align="justify">Estructuras repetitivas<a name="estructuras3"></a></h3></td>
+      <td width="150" align="center" valign="middle"><a href="Programacion.html#inicio"><img src="imagenes/flecha.jpg" width="75" height="55">
+    </a></td>
+    </tr>
+  </table>
+
+
+</blockquote>
+<p align="justify">Estructura repetitiva DOWHILE (mientras - hacer)</p>
+<table width="600" border="0">
+  <tr>
+    <td width="307"><img src="imagenes/flujograma7.jpg"></td>
+    <td width="277"><p align="justify">DOWHILE condición</p>
+      <p align="justify">acción1</p>
+      <p align="justify">acción2</p>
+      <p align="justify">.........</p>
+    <p align="justify">END DO</p></td>
+  </tr>
+</table>
+<p align="justify">El seudocódigo significa: "Mientras   la condición sea verdadera hacer la o las acciones; cuando sea falsa,   terminar el bucle". Puede ocurrir que el bucle no se ejecute ni una sola   vez en el caso de que la condición no se cumpla inicialmente.</p>
+<p align="justify">Estructura repetitiva <strong>DOUNTIL</strong> (repetir - hasta)</p>
+<table width="600" border="0">
+  <tr>
+    <td width="253"><img src="imagenes/flujograma8.jpg"></td>
+    <td width="331"><p align="justify">DOUNTIL condición</p>
+      <p align="justify">acción1</p>
+      <p align="justify">acción2</p>
+      <p align="justify">........</p>
+    <p align="justify">END DO</p></td>
+  </tr>
+</table>
+
+<p align="justify">El seudocódigo significa: "Repetir la   condición y hacer la o las acciones hasta que la condición sea   verdadera y terminar el bucle". </p>
+<p align="justify">Tanto en DOWHILE como en DOUNTIL   se necesita que el bucle contenga al menos una instrucción que cambie la   condición que controla el bucle. Si no hubiera el bucle continuaría   indefinidamente. Estas estructuras se usan cuando No sabemos el número   de veces que se repetirá el ciclo.</p>
+<h3 align="justify">La estructura REPETIR.</h3>
+<table width="600" border="0">
+  <tr>
+    <td width="234"><img src="imagenes/flujograma9.jpg"></td>
+    <td width="350"><p align="justify">La estructura REPETIR es la   estructura algorítmica adecuada para utilizar en un ciclo que se   ejecutará un número definido de veces. Por ejemplo cuando calculamos las   nóminas de una empresa, tenemos que sumar los sueldos de N empleados de   la misma. Podemos calcular el promedio de calificaciones de un grupo de   alumnos sumando todas las calificaciones y dividir entre el número de   alumnos o también sacar el promedio de cada alumno según sus   calificaciones mensuales. En todos los caso sabemos de antemano cuántas   veces tenemos que repetir una determinada operación.</p></td>
+  </tr>
+</table>
+<p align="justify"> </p>
+<div align="justify">
+  <ul>
+    <li><p>V es una variable de contro</p></li>
+    <li><p>VI es el valor inicial</p></li>
+    <li><p>VF es el valor final</p></li>
+    <li><p>INC es el incremento</p></li>
+  </ul>
+</div>
+<p align="justify">El formato es:</p>
+<p align="justify">FOR variable = expresión1 TO expresión2 [STEP expresión3]</p>
+<p align="justify">DO acción</p>
+<p align="justify">END FOR</p>
+<p align="justify"><em>STEP expresión3 es opcional y es un incremento (positivo o negativo)</em></p>
+<p class="Estilo1">VIDEO</p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="320" height="240" id="FLVPlayer">
+  <param name="movie" value="FLVPlayer_Progressive.swf" />
+  <param name="salign" value="lt" />
+  <param name="quality" value="high" />
+  <param name="scale" value="noscale" />
+  <param name="FlashVars" value="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=video/Flujogramas&autoPlay=false&autoRewind=false" />
+  <embed src="FLVPlayer_Progressive.swf" flashvars="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=video/Flujogramas&autoPlay=false&autoRewind=false" quality="high" scale="noscale" width="320" height="240" name="FLVPlayer" salign="LT" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</body>
+</html>

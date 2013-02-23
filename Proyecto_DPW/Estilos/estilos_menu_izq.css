@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+BODY{
+	/*background-image:url(../Imagenes/textura_4.jpg);
+	/*background-color:#C3E2F7;*/
+	
+	border:solid;
+	border-color:#B7B7B7;
+	max-width:70%;
+	height:95%;
+	margin:1% 1% auto auto ;
+	/* Redondear las puntas*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	}
+
+#vertical{
+display: block; /* inline es horizontal el menú y block es el menú vertical*/
+width:80%;
+}
+
+#vertical a:link, nav a:visited {
+display:block;
+/*border-bottom: 2px solid #AAA8AC;*/
+/*padding: 5px;*/
+text-decoration: none;
+font-size:12px;
+color:#215589;
+font-weight: bold;
+margin: 2px;
+}
+
+#vertical a:hover {
+color: #FFF;
+background-color:;
+}
+
+h3{
+	color:#456E98;
+	font-size:18px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	/* sombra del texto menu*/
+	text-shadow: 3px 3px 3px #333;
+}
+
+#educacion { 
+	/*border: solid thick #215589;
+	/* sombreado de la imagen*/
+	-webkit-border-box-shadow: black 0.5em 0.5em 0.3em;
+	border-spacing:inherit;
+	-moz-border-box-shadow: black 0.5em 0.5em 0.3em;
+	box-shadow: black 0.5em 0.5em 0.3em;
+	/* Redondear las puntas*/
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-top:5px; 
+	padding:5px; 
+	width: 80px;
+	}
